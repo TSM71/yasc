@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background-color: #000000;
+  display: grid;
+  place-items: center;
+  width: 100svw;
+  height: 100svh;
+}
+@media (min-aspect-ratio: 36 / 74) {
+  canvas {
+    height: 100%;
+  }
+}
+@media (max-aspect-ratio: 36 / 74) {
+  canvas {
+    width: 100%;
+  }
+}
+canvas {
+  touch-action: none;
+}

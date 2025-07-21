@@ -1,0 +1,14 @@
+{
+  "name": "yasc",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5",
+    "workbox-cli": "^7.3.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && bun build src/index.ts --sourcemap --minify --outdir dist && cp res/* dist && workbox generateSW workbox-config.cjs",
+    "dev": "(trap 'kill 0' int; (while sleep 0.1; do ls src/* res/* | entr -d bun run build; done) & python -m 'http.server' -d dist 3000 & wait)"
+  }
+}
